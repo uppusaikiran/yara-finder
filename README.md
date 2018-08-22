@@ -51,6 +51,47 @@ admin@cuckoo /tmp/yara-finder/tests
 }
 
 ```
+### use case for malicious sample
+
+```
+curl  -X POST -F file=@e336f967802da8342f724d56dadb1e54200840f681927ba6b3d0a5a1dab3e3c2 http://0.0.0.0:7777/yara
+{
+  "match": [
+    "domain",
+    "anti_dbg",
+    "win_mutex",
+    "win_registry",
+    "win_files_operation",
+    "VC8_Microsoft_Corporation",
+    "Microsoft_Visual_Cpp_8",
+    "IsPE32",
+    "IsWindowsGUI",
+    "HasDebugData",
+    "HasRichSignature",
+    "Advapi_Hash_API",
+    "BASE64_table",
+    "maldoc_find_kernel32_base_method_1",
+    "VC8_Microsoft_Corporation",
+    "Microsoft_Visual_Cpp_8",
+    "anti_dbg",
+    "win_mutex",
+    "win_registry",
+    "win_files_operation",
+    "IsPE32",
+    "IsWindowsGUI",
+    "HasDebugData",
+    "HasRichSignature",
+    "System_Tools",
+    "Dropper_Strings",
+    "Misc_Suspicious_Strings",
+    "contentis_base64",
+    "maldoc_find_kernel32_base_method_1",
+    "Advapi_Hash_API",
+    "BASE64_table"
+  ],
+  "status": "success"
+}
+
 
 ## Docker Usage:
 ```
@@ -71,3 +112,10 @@ admin@cuckoo /tmp/yara-finder/tests
   "status": "success"
 }
 
+
+## Features:
+
+* Easy to Deploy and simple to use.
+* Ability to extend the yara rules with custom and third-party rules simply adding them in the rules folder.
+* Uses multiple layered scanning for finding yara matches including zip file extraction,applying yara on internal files as well.
+* Frequent Yara-rules updation to the repo.
