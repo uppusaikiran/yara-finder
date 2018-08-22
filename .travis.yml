@@ -17,6 +17,7 @@ addons:
     packages:
       - git
       - python-pip
+      - yara-python
 install:
         #- source tests/travis_install.sh
   - pip install -r requirements.txt
