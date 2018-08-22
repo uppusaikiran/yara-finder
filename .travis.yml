@@ -5,7 +5,7 @@
 sudo: true
 language: python
 virtualenv:
-  system_site_packages: true
+  system_site_packages: false
 env:
   matrix:
     - DISTRIB="ubuntu" PYTHON_VERSION="2.7" COVERAGE="true"
@@ -21,7 +21,6 @@ install:
         #- source tests/travis_install.sh
   - pip install -r requirements.txt
 before_script:
-  - dectivate
   - git config --global user.email "you@example.com"
   - git config --global user.name "Your Name"
 script:
