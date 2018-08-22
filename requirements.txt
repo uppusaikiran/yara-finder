@@ -6,6 +6,6 @@ MarkupSafe==1.0
 Werkzeug==0.14.1
 #yara==1.7.7
 yara-python
-magic
+python-magic
 oletools
 rarfile
