@@ -6,7 +6,7 @@ A simple tool to yara match the file against various yara rules to find the indi
 
 # Usage:
 
-### Clone the Repo and install and run the command `pip install -r requirements.txt'
+### Clone the Repo and install and run the command `pip install -r requirements.txt`
 
 ```
 admin@cuckoo /tmp % git clone git@github.com:uppusaikiran/yara-finder.git
