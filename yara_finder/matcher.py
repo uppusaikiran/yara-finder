@@ -128,14 +128,13 @@ class YaraClass:
         Scan method that uses compiled rules to scan a file
         """
         try:
+            print scan_file
             matches = self.rules.match(scan_file)
-            return matches
 	    print "{}\n{}\n".format(scan_file, matches)
-	    
+	    return matches 
         except Exception as e:
-	    return []
             print "Scan Exception: {}".format(e)
-
+            return []
     def check_unpack(self, work_file):
         fc = self.FileClass(work_file)
         fc.check_magic()

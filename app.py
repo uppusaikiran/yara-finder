@@ -15,14 +15,14 @@ also be used as template for Python modules.
 
 Note: This skeleton file can be safely removed if not needed!
 """
-from __future__ import division, print_function, absolute_impor
+from __future__ import division, print_function, absolute_import
 import os
 from flask import Flask,render_template, jsonify , request,redirect,url_for
 from werkzeug.utils import secure_filename
 from yara_finder.matcher import YaraClass
 
 app = Flask(__name__)
-ys = YaraClass('rules','.', True ,'.')
+ys = YaraClass(os.path.join(os.path.dirname(os.path.realpath(__file__)),'rules'),'.', True ,'.')
 ys.compile()
 
 @app.route('/yara', methods =['POST'])
@@ -34,8 +34,8 @@ def sendYara():
             file.save( os.path.join(file_path, filename ))
             # Send the file to Yara Detector
             full_path = os.path.join(file_path,filename)
-            print full_path
-            result = ys.scan_single( full_path)
+            print(full_path)
+            result = ys.scan_single(full_path)
             data = {}
             data['status'] = 'success'
             data['match'] = [ str(x) for x in result]
