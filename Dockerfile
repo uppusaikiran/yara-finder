@@ -5,8 +5,6 @@ RUN apt-get install python-dev -y
 RUN apt-get install build-essential -y 
 RUN apt-get install python-setuptools python-pip -y
 COPY requirements.txt /src/requirements.txt
-COPY setup.py /src/setup.py
-COPY setup.cfg /src/setup.cfg
 COPY app.py /src/app.py
 COPY yara_finder/matcher.py /src/yara_finder/matcher.py
 COPY yara_finder/__init__.py /src/yara_finder/__init__.py
