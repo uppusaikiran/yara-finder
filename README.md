@@ -119,3 +119,8 @@ admin@cuckoo /tmp/yara-finder/tests
 * Ability to extend the yara rules with custom and third-party rules simply adding them in the rules folder.
 * Uses multiple layered scanning for finding yara matches including zip file extraction,applying yara on internal files as well.
 * Frequent Yara-rules updation to the repo.
+
+
+## Credits
+
+* Built on yara_scan written by @tylerha97
